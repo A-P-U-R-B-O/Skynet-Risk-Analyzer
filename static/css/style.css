@@ -1,0 +1,105 @@
+/* Skynet Risk Analyzer - Custom Styles */
+
+:root {
+    --danger-red: #dc3545;
+    --warning-orange: #fd7e14;
+    --success-green: #28a745;
+    --dark-bg: #212529;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+main {
+    min-height: calc(100vh - 200px);
+}
+
+.hero-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 3rem ! important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.btn-danger {
+    background-color: var(--danger-red);
+    border-color: var(--danger-red);
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+    transform: scale(1.05);
+}
+
+.form-range::-webkit-slider-thumb {
+    background: var(--danger-red);
+}
+
+.form-range::-moz-range-thumb {
+    background: var(--danger-red);
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.display-4 {
+    font-weight: bold;
+}
+
+footer {
+    margin-top: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 2rem !important;
+    }
+    
+    . display-3 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Loading animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,. 3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Risk level colors */
+.risk-minimal { color: var(--success-green); }
+.risk-low { color: #ffc107; }
+.risk-moderate { color: var(--warning-orange); }
+.risk-high { color: var(--danger-red); }
+.risk-critical { color: #6f42c1; }

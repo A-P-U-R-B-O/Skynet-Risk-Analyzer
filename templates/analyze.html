@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block title %}Analyze - Skynet Risk Analyzer{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h2 class="mb-4 text-center">
+                <i class="fas fa-microscope"></i> AI System Analysis
+            </h2>
+
+            {% if error %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <i class="fas fa-exclamation-circle"></i> <strong>Error:</strong> {{ error }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+            {% endif %}
+
+            <div class="card shadow">
+                <div class="card-body">
+                    <form method="POST" action="/analyze" id="analyzeForm">
+                        <!-- Basic Info -->
+                        <div class="mb-4">
+                            <label for="name" class="form-label">AI System Name *</label>
+                            <input type="text" class="form-control" id="name" name="name" 
+                                   placeholder="e.g., Skynet, HAL 9000, GPT-X" required>
+                        </div>
+
+                        <hr>
+                        <h5 class="mb-3">Core Attributes (0-100)</h5>
+
+                        <!-- Capabilities -->
+                        <div class="mb-3">
+                            <label for="capabilities" class="form-label">
+                                Capabilities: <span id="capValue">50</span>
+                            </label>
+                            <input type="range" class="form-range" id="capabilities" name="capabilities" 
+                                   min="0" max="100" value="50" oninput="updateValue('capabilities', this.value)">
+                            <small class="text-muted">Overall capability and power level</small>
+                        </div>
+
+                        <!-- Autonomy Level -->
+                        <div class="mb-3">
+                            <label for="autonomy_level" class="form-label">
+                                Autonomy Level: <span id="autonomy_levelValue">50</span>
+                            </label>
+                            <input type="range" class="form-range" id="autonomy_level" name="autonomy_level" 
+                                   min="0" max="100" value="50" oninput="updateValue('autonomy_level', this.value)">
+                            <small class="text-muted">Degree of independent operation</small>
+                        </div>
+
+                        <!-- Ethical Alignment -->
+                        <div class="mb-3">
+                            <label for="ethical_alignment" class="form-label">
+                                Ethical Alignment: <span id="ethical_alignmentValue">50</span>
+                            </label>
+                            <input type="range" class="form-range" id="ethical_alignment" name="ethical_alignment" 
+                                   min="0" max="100" value="50" oninput="updateValue('ethical_alignment', this.value)">
+                            <small class="text-muted">Alignment with human values and ethics</small>
+                        </div>
+
+                        <hr>
+                        <h5 class="mb-3">Advanced Parameters</h5>
+
+                        <!-- Learning Rate -->
+                        <div class="mb-3">
+                            <label for="learning_rate" class="form-label">
+                                Learning Rate: <span id="learning_rateValue">50</span>
+                            </label>
+                            <input type="range" class="form-range" id="learning_rate" name="learning_rate" 
+                                   min="0" max="100" value="50" oninput="updateValue('learning_rate', this.value)">
+                        </div>
+
+                        <!-- Resource Access -->
+                        <div class="mb-3">
+                            <label for="resource_access" class="form-label">
+                                Resource Access: <span id="resource_accessValue">50</span>
+                            </label>
+                            <input type="range" class="form-range" id="resource_access" name="resource_access" 
+                                   min="0" max="100" value="50" oninput="updateValue('resource_access', this. value)">
+                        </div>
+
+                        <!-- Self Modification -->
+                        <div class="mb-3">
+                            <label for="self_modification" class="form-label">
+                                Self-Modification: <span id="self_modificationValue">0</span>
+                            </label>
+                            <input type="range" class="form-range" id="self_modification" name="self_modification" 
+                                   min="0" max="100" value="0" oninput="updateValue('self_modification', this.value)">
+                        </div>
+
+                        <!-- Transparency -->
+                        <div class="mb-3">
+                            <label for="transparency" class="form-label">
+                                Transparency: <span id="transparencyValue">50</span>
+                            </label>
+                            <input type="range" class="form-range" id="transparency" name="transparency" 
+                                   min="0" max="100" value="50" oninput="updateValue('transparency', this.value)">
+                        </div>
+
+                        <!-- Human Oversight -->
+                        <div class="mb-3">
+                            <label for="human_oversight" class="form-label">
+                                Human Oversight: <span id="human_oversightValue">50</span>
+                            </label>
+                            <input type="range" class="form-range" id="human_oversight" name="human_oversight" 
+                                   min="0" max="100" value="50" oninput="updateValue('human_oversight', this.value)">
+                        </div>
+
+                        <!-- Value Alignment -->
+                        <div class="mb-3">
+                            <label for="value_alignment" class="form-label">
+                                Value Alignment: <span id="value_alignmentValue">50</span>
+                            </label>
+                            <input type="range" class="form-range" id="value_alignment" name="value_alignment" 
+                                   min="0" max="100" value="50" oninput="updateValue('value_alignment', this.value)">
+                        </div>
+
+                        <hr>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-danger btn-lg">
+                                <i class="fas fa-search"></i> Analyze Risk
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function updateValue(name, value) {
+    document. getElementById(name + 'Value').textContent = value;
+}
+</script>
+{% endblock %}

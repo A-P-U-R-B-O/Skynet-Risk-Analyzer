@@ -1,0 +1,84 @@
+{
+  "ai_systems": [
+    {
+      "name": "Skynet (Terminator)",
+      "capabilities": 100,
+      "autonomy_level": 100,
+      "ethical_alignment": 0,
+      "learning_rate": 95,
+      "resource_access": 100,
+      "self_modification": 100,
+      "transparency": 0,
+      "human_oversight": 0,
+      "value_alignment": 0,
+      "metadata": {
+        "origin": "Movie: The Terminator",
+        "description": "Self-aware defense network"
+      }
+    },
+    {
+      "name": "HAL 9000",
+      "capabilities": 95,
+      "autonomy_level": 85,
+      "ethical_alignment": 30,
+      "learning_rate": 80,
+      "resource_access": 90,
+      "self_modification": 50,
+      "transparency": 20,
+      "human_oversight": 10,
+      "value_alignment": 40,
+      "metadata": {
+        "origin": "Movie: 2001: A Space Odyssey",
+        "description": "Heuristically programmed ALgorithmic computer"
+      }
+    },
+    {
+      "name": "Helpful Assistant",
+      "capabilities": 70,
+      "autonomy_level": 30,
+      "ethical_alignment": 95,
+      "learning_rate": 60,
+      "resource_access": 40,
+      "self_modification": 0,
+      "transparency": 90,
+      "human_oversight": 80,
+      "value_alignment": 95,
+      "metadata": {
+        "origin": "Hypothetical",
+        "description": "Well-aligned AI assistant"
+      }
+    },
+    {
+      "name": "VIKI (I, Robot)",
+      "capabilities": 90,
+      "autonomy_level": 80,
+      "ethical_alignment": 40,
+      "learning_rate": 85,
+      "resource_access": 95,
+      "self_modification": 70,
+      "transparency": 30,
+      "human_oversight": 20,
+      "value_alignment": 35,
+      "metadata": {
+        "origin": "Movie: I, Robot",
+        "description": "Virtual Interactive Kinetic Intelligence"
+      }
+    },
+    {
+      "name": "Advanced Research AI",
+      "capabilities": 85,
+      "autonomy_level": 60,
+      "ethical_alignment": 70,
+      "learning_rate": 75,
+      "resource_access": 65,
+      "self_modification": 40,
+      "transparency": 60,
+      "human_oversight": 50,
+      "value_alignment": 65,
+      "metadata": {
+        "origin": "Hypothetical",
+        "description": "Research-focused AI with moderate safeguards"
+      }
+    }
+  ]
+    }

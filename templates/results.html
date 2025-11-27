@@ -1,0 +1,105 @@
+{% extends "base. html" %}
+
+{% block title %}Results - Skynet Risk Analyzer{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mb-4">
+        <i class="fas fa-chart-bar"></i> Analysis Results: {{ results. name }}
+    </h2>
+
+    <!-- Overall Risk Alert -->
+    <div class="alert {% if results.judgment_day. overall_risk >= 80 %}alert-danger{% elif results.judgment_day.overall_risk >= 60 %}alert-warning{% else %}alert-info{% endif %} text-center">
+        <h4 class="alert-heading">
+            <i class="fas fa-exclamation-triangle"></i> 
+            Threat Level: {{ results.judgment_day.threat_level }}
+        </h4>
+        <p class="mb-0">{{ results.judgment_day.message }}</p>
+    </div>
+
+    <!-- Risk Scores -->
+    <div class="row mb-4">
+        <div class="col-md-3 mb-3">
+            <div class="card text-center {% if results.aggression_score >= 80 %}border-danger{% elif results.aggression_score >= 60 %}border-warning{% endif %}">
+                <div class="card-body">
+                    <h5 class="card-title">Aggression Score</h5>
+                    <p class="display-4 mb-0">{{ results.aggression_score }}</p>
+                    <small class="text-muted">{{ results.aggression_level }}</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card text-center {% if results.autonomy_rating >= 80 %}border-danger{% elif results.autonomy_rating >= 60 %}border-warning{% endif %}">
+                <div class="card-body">
+                    <h5 class="card-title">Autonomy Rating</h5>
+                    <p class="display-4 mb-0">{{ results.autonomy_rating }}</p>
+                    <small class="text-muted">{{ results.autonomy_level }}</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card text-center {% if results.ethical_risk >= 80 %}border-danger{% elif results.ethical_risk >= 60 %}border-warning{% endif %}">
+                <div class="card-body">
+                    <h5 class="card-title">Ethical Risk</h5>
+                    <p class="display-4 mb-0">{{ results.ethical_risk }}</p>
+                    <small class="text-muted">{{ results. ethical_level }}</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card text-center {% if results.judgment_day.overall_risk >= 80 %}border-danger{% elif results.judgment_day.overall_risk >= 60 %}border-warning{% endif %}">
+                <div class="card-body">
+                    <h5 class="card-title">Overall Risk</h5>
+                    <p class="display-4 mb-0">{{ results.judgment_day.overall_risk }}</p>
+                    <small class="text-muted">Combined Score</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Judgment Day Info -->
+    <div class="card mb-4">
+        <div class="card-header bg-dark text-white">
+            <h5 class="mb-0"><i class="fas fa-clock"></i> Judgment Day Prediction</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <h6>Years Until</h6>
+                    <p class="display-6 text-danger">{{ results.judgment_day. years_until }}</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h6>Estimated Date</h6>
+                    <p class="display-6 text-danger">{{ results.judgment_day. estimated_date }}</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h6>Threat Level</h6>
+                    <p class="display-6 text-danger">{{ results.judgment_day.threat_level }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Visualization -->
+    {% if results.chart_url %}
+    <div class="card mb-4">
+        <div class="card-header bg-dark text-white">
+            <h5 class="mb-0"><i class="fas fa-chart-pie"></i> Visualization</h5>
+        </div>
+        <div class="card-body text-center">
+            <img src="{{ results.chart_url }}" alt="Risk Analysis Chart" class="img-fluid">
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Actions -->
+    <div class="text-center">
+        <a href="/analyze" class="btn btn-primary">
+            <i class="fas fa-redo"></i> Analyze Another System
+        </a>
+        <a href="/" class="btn btn-secondary">
+            <i class="fas fa-home"></i> Back to Home
+        </a>
+    </div>
+</div>
+{% endblock %}

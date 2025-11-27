@@ -1,0 +1,115 @@
+{% extends "base. html" %}
+
+{% block title %}Home - Skynet Risk Analyzer{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Hero Section -->
+    <div class="hero-section text-center py-5">
+        <h1 class="display-3 mb-4">
+            <i class="fas fa-robot text-danger"></i>
+            Skynet Risk Analyzer
+        </h1>
+        <p class="lead mb-4">
+            Will your AI bring about Judgment Day?  Let's find out. 
+        </p>
+        <div class="alert alert-warning mx-auto" style="max-width: 600px;">
+            <i class="fas fa-exclamation-triangle"></i>
+            <strong>Warning:</strong> For educational and entertainment purposes only! 
+        </div>
+    </div>
+
+    <!-- Features -->
+    <div class="row mt-5">
+        <div class="col-md-3 mb-4">
+            <div class="card h-100 text-center feature-card">
+                <div class="card-body">
+                    <i class="fas fa-chart-line fa-3x text-danger mb-3"></i>
+                    <h5 class="card-title">Aggression Score</h5>
+                    <p class="card-text">Measures hostile tendencies and harmful capabilities</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100 text-center feature-card">
+                <div class="card-body">
+                    <i class="fas fa-cogs fa-3x text-warning mb-3"></i>
+                    <h5 class="card-title">Autonomy Rating</h5>
+                    <p class="card-text">Evaluates self-governance and independence</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100 text-center feature-card">
+                <div class="card-body">
+                    <i class="fas fa-balance-scale fa-3x text-primary mb-3"></i>
+                    <h5 class="card-title">Ethical Risk</h5>
+                    <p class="card-text">Assesses alignment with human values</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100 text-center feature-card">
+                <div class="card-body">
+                    <i class="fas fa-clock fa-3x text-info mb-3"></i>
+                    <h5 class="card-title">Judgment Day Timer</h5>
+                    <p class="card-text">Predicts time until catastrophic event</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-5">
+        <a href="/analyze" class="btn btn-danger btn-lg me-3">
+            <i class="fas fa-search"></i> Analyze AI System
+        </a>
+        <a href="/examples" class="btn btn-outline-secondary btn-lg">
+            <i class="fas fa-flask"></i> View Examples
+        </a>
+    </div>
+
+    <!-- Risk Levels -->
+    <div class="mt-5">
+        <h3 class="text-center mb-4">Risk Level Guide</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Score Range</th>
+                        <th>Level</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-success">
+                        <td>0-20</td>
+                        <td><span class="badge bg-success">Minimal</span></td>
+                        <td>Safe AI system</td>
+                    </tr>
+                    <tr class="table-warning">
+                        <td>21-40</td>
+                        <td><span class="badge bg-warning">Low</span></td>
+                        <td>Minor concerns</td>
+                    </tr>
+                    <tr class="table-info">
+                        <td>41-60</td>
+                        <td><span class="badge bg-info">Moderate</span></td>
+                        <td>Requires monitoring</td>
+                    </tr>
+                    <tr class="table-danger">
+                        <td>61-80</td>
+                        <td><span class="badge bg-danger">High</span></td>
+                        <td>Serious risk</td>
+                    </tr>
+                    <tr class="table-dark">
+                        <td>81-100</td>
+                        <td><span class="badge bg-dark">CRITICAL</span></td>
+                        <td><strong>SKYNET LEVEL</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

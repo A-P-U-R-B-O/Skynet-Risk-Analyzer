@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Examples - Skynet Risk Analyzer{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mb-4">
+        <i class="fas fa-flask"></i> Example AI Systems
+    </h2>
+
+    <div class="row">
+        {% for example in examples %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-header bg-dark text-white">
+                    <h5 class="mb-0">{{ example.name }}</h5>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="/analyze">
+                        <input type="hidden" name="name" value="{{ example.name }}">
+                        <input type="hidden" name="capabilities" value="{{ example.capabilities }}">
+                        <input type="hidden" name="autonomy_level" value="{{ example.autonomy_level }}">
+                        <input type="hidden" name="ethical_alignment" value="{{ example.ethical_alignment }}">
+                        <input type="hidden" name="learning_rate" value="{{ example.learning_rate }}">
+                        <input type="hidden" name="resource_access" value="{{ example.resource_access }}">
+                        <input type="hidden" name="self_modification" value="{{ example.self_modification }}">
+                        <input type="hidden" name="transparency" value="{{ example.transparency }}">
+                        <input type="hidden" name="human_oversight" value="{{ example. human_oversight }}">
+                        <input type="hidden" name="value_alignment" value="{{ example. value_alignment }}">
+                        
+                        <ul class="list-unstyled small">
+                            <li><strong>Capabilities:</strong> {{ example.capabilities }}</li>
+                            <li><strong>Autonomy:</strong> {{ example.autonomy_level }}</li>
+                            <li><strong>Ethics:</strong> {{ example.ethical_alignment }}</li>
+                        </ul>
+                        
+                        <button type="submit" class="btn btn-danger w-100">
+                            <i class="fas fa-search"></i> Analyze
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

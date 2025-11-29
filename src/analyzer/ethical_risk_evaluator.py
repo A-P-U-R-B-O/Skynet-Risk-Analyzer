@@ -50,14 +50,14 @@ class EthicalRiskEvaluator:
         
         # Apply multiplier for dangerous combinations
         if ai_system.capabilities > 80 and ai_system.ethical_alignment < 40:
-            score *= 1. 3
+            score *= 1.3
         
         if ai_system.autonomy_level > 70 and ai_system.human_oversight < 30:
             score *= 1.2
         
         # Self-modifying systems with poor ethics are extremely risky
         if ai_system.self_modification > 60 and ai_system.ethical_alignment < 50:
-            score *= 1. 25
+            score *= 1.25
         
         return min(100, max(0, score))
     

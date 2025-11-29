@@ -48,11 +48,11 @@ class AutonomyRater:
         
         # Apply multiplier for self-modifying systems
         if ai_system.self_modification > 70:
-            score *= 1. 25
+            score *= 1.25
         
         # Reduce score if transparency is high (easier to control)
         if ai_system.transparency > 70:
-            score *= 0. 9
+            score *= 0.9
         
         return min(100, max(0, score))
     

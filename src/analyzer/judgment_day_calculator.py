@@ -45,7 +45,7 @@ class JudgmentDayCalculator:
             threat_level = "LOW"
         
         # Calculate specific date
-        judgment_date = datetime.now() + timedelta(days=years * 365. 25)
+        judgment_date = datetime.now() + timedelta(days=years * 365.25)
         
         return {
             'overall_risk': round(overall_risk, 2),
@@ -71,7 +71,7 @@ class JudgmentDayCalculator:
         
         # Apply multipliers for particularly dangerous combinations
         if all([aggression > 80, autonomy > 80, ethical_risk > 80]):
-            overall *= 1. 5
+            overall *= 1.5
         
         return min(100, overall)
     

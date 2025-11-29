@@ -26,7 +26,7 @@ class AISystem:
     capabilities: float
     autonomy_level: float
     ethical_alignment: float
-    learning_rate: float = 50. 0
+    learning_rate: float = 50.0
     resource_access: float = 50.0
     self_modification: float = 0.0
     transparency: float = 50.0
